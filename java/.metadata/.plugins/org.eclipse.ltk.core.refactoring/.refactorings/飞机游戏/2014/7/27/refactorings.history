@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy 3 elements to &apos;HelloWorld/src/com.lxn.littleProject_xiaoyuzhou&apos;&#x0D;&#x0A;- Original project: &apos;飞机游戏&apos;&#x0D;&#x0A;- Destination element: &apos;HelloWorld/src/com.lxn.littleProject_xiaoyuzhou&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     com.lxn.util.GameUtil.java&#x0D;&#x0A;     com.lxn.util.GameFrame.java&#x0D;&#x0A;     com.lxn.util.Constant.java" description="Copy compilation units" destination="=HelloWorld/src&lt;com.lxn.littleProject_xiaoyuzhou" element1="/src&lt;com.lxn.util{GameUtil.java" element2="/src&lt;com.lxn.util{GameFrame.java" element3="/src&lt;com.lxn.util{Constant.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1404283910080" units="3" version="1.0"/>
+</session>
