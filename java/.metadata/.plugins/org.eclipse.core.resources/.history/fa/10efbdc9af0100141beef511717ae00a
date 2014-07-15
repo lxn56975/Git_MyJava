@@ -1,0 +1,24 @@
+package com.lxn.littleProject;
+
+import java.awt.Graphics;
+import java.awt.Image;
+
+public class MyFirstPriject extends GameFrame{
+
+	Image img=GameUtil.GetImage("Image/bg.jpg");
+	Star sun=new Star("Image/sun.jpg", Constant.Game_Width/2, Constant.Game_Height/2);
+	
+	
+	@Override	
+	public void paint(Graphics g) {
+		g.drawImage(img, 0, 0,null);
+		sun.draw(g);
+	}
+
+
+
+	public static void main(String[] args) {
+		MyFirstPriject  my=new MyFirstPriject();
+		my.lauchFrame();
+	}
+}

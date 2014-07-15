@@ -1,0 +1,11 @@
+package Hello;
+
+public class Hello {
+	
+	public static void main(String[] args){
+     	   MyArrayList myarr=new MyArrayList();
+     	   myarr.add("aaa");
+     	   
+     	   
+	}
+}

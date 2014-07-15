@@ -1,0 +1,108 @@
+package com.lxn.littleProject;
+
+import java.awt.Color;
+import java.awt.Frame;
+import java.awt.Graphics;
+import java.awt.Image;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowListener;
+
+import javax.swing.plaf.ColorUIResource;
+
+/**
+ *  第一个小游戏，躲子弹
+ * @author xiaoning
+ *
+ */
+public class myFirstGame extends Frame{
+	/**
+	 * 加载窗口
+	 * 
+	 */
+	double x=150,y=150,temp,tempy;
+	
+	private double degree=Math.PI/3;//[0-2pi]
+	
+
+	Image img=GameUtil.GetImage("Image/sun.jpg");
+	
+	public void lauchFrame(){
+		setSize(Constant.Game_Width, Constant.Game_Height);
+		setLocation(300, 100);
+		setVisible(true);
+		new paintTread().start();
+		
+		/**
+		 * 关闭窗口
+		 */
+		addWindowListener(new WindowAdapter() {
+
+			@Override
+			public void windowClosing(WindowEvent e) {
+				// TODO Auto-generated method stub
+				System.exit(0);
+			}
+		});
+		
+		
+	}
+	
+	
+	/**
+	 *在程序上画东西。。。。
+	 *类似画笔的作用，Frame会自动调用此重写函数
+	 */
+	@Override
+	public void paint(Graphics g) {
+//		g.setColor(Color.BLUE);
+//		g.drawString("asdasdasda", 200, 200);
+//		g.drawLine(100, 100, 200, 200);
+//		g.drawOval(200, 200, 200, 200); 
+		
+		/**
+		 *图片运动的实现
+		 */
+		g.drawImage(img, (int)x, (int)y,50,50, null);
+//		if(x>=250){
+//			temp=-1;
+//			flog=false;
+//		}else if(x<=150){
+//			temp=1;
+//			flog=true;
+//		}
+//		x+=temp;
+//		if(flog)
+//		y=Math.sqrt(2500-(x-200)*(x-200))+200;
+//		else {
+//			y=Math.sqrt(2500-(x-200)*(x-200))*(-1)+200;
+//		}
+		
+//		
+//		if(y>500||y<=0){
+//			degree=-degree;
+//		}
+//		if(x>500||x<=0){
+//			degree=Math.PI-degree;
+//		}
+//		x+=3*Math.cos(degree);
+//		y+=3*Math.sin(degree);
+	}
+/**
+ * 定义一个重画窗体的内部类，内部类哦
+ * @author xiaoning
+ *
+ */
+class paintTread extends Thread{
+	public void run(){
+		while(true){
+			repaint();
+			try {
+				super.sleep(30);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+}
+}

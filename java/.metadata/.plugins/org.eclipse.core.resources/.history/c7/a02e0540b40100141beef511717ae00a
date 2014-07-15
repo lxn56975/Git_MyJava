@@ -1,0 +1,34 @@
+package com.lxn.littleProject;
+
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.Image;
+
+public class Planet extends Star{
+	
+	double longline,shortline;
+	double speed;
+	double degree=0.1;
+	Star centerStar;
+	
+	Planet(String imgpath,double x,double y,double longline,double shortline,Star centerStar){
+		super(imgpath, x+longline, y);
+		this.longline=longline;
+		this.shortline=shortline;
+		this.centerStar=centerStar;
+	}
+	
+	@Override
+	public void draw(Graphics g) {
+		g.drawImage(img,(int)x,(int)y, null);
+		this.x=centerStar.x+longline*Math.cos(degree);
+		this.y=centerStar.y+shortline*Math.sin(degree);
+		
+		degree+=0.1;
+		
+		Color c=g.getColor();
+		g.setColor(Color.blue);
+		g.drawOval((int)(centerStar.x-longline), (int)(centerStar.y-shortline), (int)longline*2, (int)shortline*2);
+		g.setColor(c);
+	}
+}

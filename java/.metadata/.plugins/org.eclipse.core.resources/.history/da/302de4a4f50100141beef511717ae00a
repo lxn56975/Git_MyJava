@@ -1,0 +1,15 @@
+package com.lxn.planegame;
+
+import java.awt.Graphics;
+
+public class Bullet {
+
+	double x,y;
+	int speed;
+	double degree;
+	int width,height;
+	
+	public void draw(Graphics g){
+		
+	}
+}

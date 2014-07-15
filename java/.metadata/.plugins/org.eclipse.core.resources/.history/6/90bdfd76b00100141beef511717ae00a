@@ -1,0 +1,27 @@
+package com.lxn.littleProject;
+
+import java.awt.Graphics;
+import java.awt.Image;
+
+public class Planet extends Star{
+	
+	double longline,shortline;
+	double speed;
+	double degree=0.1;
+	Star centerStar;
+	
+	Planet(String imgpath,double x,double y,double longline,double shortline,Star centerStar){
+		super(imgpath, x+longline, y);
+		this.longline=longline;
+		this.shortline=shortline;
+	}
+	
+	@Override
+	public void draw(Graphics g) {
+		g.drawImage(img,(int)x,(int)y, null);
+		x=centerStar.x+longline*Math.cos(degree);
+		y=centerStar.y+shortline*Math.sin(degree);
+		
+		degree+=0.1;
+	}
+}

@@ -1,0 +1,12 @@
+package com.lxn.littleProject;
+
+import java.awt.Image;
+
+public class myGame01 extends myFirstGame{
+
+	Image img=GameUtil.GetImage("Image/sun.jpg");
+	public static void main(String[] args) {
+		myGame01 mg=new myGame01();
+		
+	}
+}

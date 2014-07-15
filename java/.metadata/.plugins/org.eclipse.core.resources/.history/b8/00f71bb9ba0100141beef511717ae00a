@@ -1,0 +1,8 @@
+package com.lxn.planegame;
+
+import com.lxn.util.GameFrame;
+
+public class planeFrame extends GameFrame{
+
+	
+}

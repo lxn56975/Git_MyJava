@@ -1,0 +1,31 @@
+package com.lxn.planegame;
+
+import java.awt.Graphics;
+import java.awt.Image;
+
+import com.lxn.util.Constant;
+import com.lxn.util.GameFrame;
+import com.lxn.util.GameUtil;
+
+public class planeFrame extends GameFrame{
+	
+	Image img=GameUtil.GetImage("Images/bg.jpg");
+	Plane plane=new Plane("Images/plane.png", 100, 100);
+	@Override
+	public void lauchFrame() {
+		super.lauchFrame();
+	}
+	
+	@Override
+	public void paint(Graphics g) {
+		g.drawImage(img, 0, 0,null);
+		
+		plane.draw(g);
+	}
+	
+	
+	
+	public static void main(String[] args) {
+		new planeFrame().lauchFrame();
+	}
+}

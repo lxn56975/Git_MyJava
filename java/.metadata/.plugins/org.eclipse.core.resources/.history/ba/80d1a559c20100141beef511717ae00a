@@ -1,0 +1,11 @@
+package com.lxn.planegame;
+
+import java.awt.Image;
+
+public class Plane {
+	double x;
+	double y;
+	Image img;
+	
+	
+}

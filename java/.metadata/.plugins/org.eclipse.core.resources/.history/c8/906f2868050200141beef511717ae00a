@@ -1,0 +1,73 @@
+package com.lxn.planegame;
+
+import java.awt.Graphics;
+import java.awt.Image;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+import java.util.ArrayList;
+
+import com.lxn.util.Constant;
+import com.lxn.util.GameFrame;
+import com.lxn.util.GameUtil;
+
+public class planeFrame extends GameFrame{
+	
+	Image img=GameUtil.GetImage("Images/bg.jpg");
+	Plane plane=new Plane("Images/plane.png", 100, 100);
+	
+	ArrayList<Bullet> bulletList=new ArrayList<Bullet>(); 
+	
+	Bullet b=new Bullet();
+	
+	@Override
+	public void lauchFrame() {
+		super.lauchFrame();
+		addKeyListener(new KeyMonitor());//注册
+		
+		for(int i=0;i<30;i++){
+			Bullet b=new Bullet();
+			bulletList.add(b);
+		}
+	}
+	/**
+	 * 定义为内部类 方便使用属性
+	 * @author xiaoning
+	 *
+	 */
+	class KeyMonitor extends KeyAdapter{
+
+		@Override
+		public void keyPressed(KeyEvent e) {
+			plane.checkmove(e);
+		}
+
+		@Override
+		public void keyReleased(KeyEvent e) {
+			plane.checkedmove(e);
+		}	
+	}
+	
+	@Override
+	public void paint(Graphics g) {
+		g.drawImage(img, 0, 0,null);
+		plane.draw(g);
+
+        for(Bullet i:bulletList){
+        	i.draw(g);
+        	if(i.getRectangle().intersects(plane.getrectange()))
+        		{
+        		System.out.println("peng la asdasdasdads");
+        		System.exit(0);
+        		}
+        
+        }
+        
+       
+	}
+	
+	
+	
+	public static void main(String[] args) {
+		new planeFrame().lauchFrame();
+	}
+}

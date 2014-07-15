@@ -1,0 +1,20 @@
+package com.lxn.littleProject;
+
+import java.awt.Graphics;
+import java.awt.Image;
+
+public class myGame01 extends myFirstGame{
+	private double degree=3.14/3;
+	public void paint(Graphics	g){
+		g.drawImage(img, (int)x, (int)y,50,50, null);
+		x=100+100*Math.cos(degree);
+		y=200+50*Math.sin(degree);
+		degree+=0.1;
+	}
+
+	//Image img=GameUtil.GetImage("Image/sun.jpg");
+	public static void main(String[] args) {
+		myGame01 mg=new myGame01();
+		mg.lauchFrame();
+	}
+}

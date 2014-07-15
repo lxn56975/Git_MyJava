@@ -1,0 +1,42 @@
+package com.lxn.planegame;
+
+import java.awt.Graphics;
+import java.awt.Image;
+
+import com.lxn.util.Constant;
+import com.lxn.util.GameFrame;
+import com.lxn.util.GameUtil;
+
+public class planeFrame extends GameFrame{
+
+	Image img=GameUtil.GetImage("Images/bg.jpg");
+	Image offScreenImage=null;
+	
+	@Override
+	public void lauchFrame() {
+		super.lauchFrame();
+		
+	}
+	
+	@Override
+	public void paint(Graphics g) {
+		g.drawImage(img, 10, 60,null);
+		
+	}
+	
+	@Override
+	public void update(Graphics g) {
+		if(offScreenImage == null) {  
+		    //在内存中开辟一块绘图空间    
+		        offScreenImage = this.createImage(Constant.Game_Width, Constant.Game_Height);  
+		    }  
+		    //获得这块绘图空间的画笔/绘图环境  
+		    Graphics gOffScreen = offScreenImage.getGraphics();   
+		    //绘制图案  
+		    paint(gOffScreen);  
+		    //g.drawImage(offScreenImage, 0, 0, null);  
+	}
+	public static void main(String[] args) {
+		new planeFrame().lauchFrame();
+	}
+}

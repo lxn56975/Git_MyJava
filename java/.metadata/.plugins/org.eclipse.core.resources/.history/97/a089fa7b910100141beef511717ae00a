@@ -1,0 +1,8 @@
+package com.lxn.littleProject;
+
+public class myGame01 extends myFirstGame{
+
+	public static void main(String[] args) {
+		myGame01 mg=new myGame01();
+	}
+}

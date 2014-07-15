@@ -1,0 +1,19 @@
+package Hello;
+
+import java.util.Date;
+import java.sql.Time;
+
+/**
+ * @author xiaoning
+ */
+public class testTime {
+	public static void main(String[] args) {
+		Date date=new Date();
+		long ltime=System.currentTimeMillis();
+		System.out.println(ltime);
+		
+		Date d=new  Date(1000);
+		System.out.println(d.toGMTString());
+		
+	}
+}

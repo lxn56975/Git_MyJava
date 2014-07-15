@@ -1,0 +1,40 @@
+package com.lxn.planegame;
+
+import java.awt.Graphics;
+import java.awt.Image;
+import java.awt.RenderingHints.Key;
+import java.awt.event.KeyEvent;
+
+import com.lxn.util.GameUtil;
+
+public class Plane {
+	double x;
+	double y;
+	Image img;
+	boolean left,right,up,down;
+	
+	Plane(String imgpath,double x,double y){
+		this.x=x;
+		this.y=y;
+		img=GameUtil.GetImage(imgpath);
+	}
+	
+	public void draw(Graphics g){
+		g.drawImage(img, (int)x, (int)y,null);
+	}
+	
+	public void checkmove(KeyEvent e){
+		if(e.getKeyCode()==)
+	}
+	
+	public void move(){
+		if(left)
+			x-=10;
+		if(right)
+			x+=10;
+		if(up)
+			y-=10;
+		if(down)
+			y+=10;
+	}
+}

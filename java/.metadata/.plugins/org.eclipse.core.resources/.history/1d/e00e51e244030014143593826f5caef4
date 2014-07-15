@@ -1,0 +1,18 @@
+package com.lxn.planegame;
+
+import java.util.Date;
+import java.util.Timer;
+
+public class CountTime {
+
+	Date t,d;
+	long starttime,endtime;
+	
+	CountTime(){
+		t=new Date();
+	}
+	
+	public int running(){
+		return (int)(System.currentTimeMillis()- t.getTime())/1000;
+	}
+}

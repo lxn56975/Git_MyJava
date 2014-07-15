@@ -1,0 +1,22 @@
+package com.lxn.planegame;
+
+import java.awt.Graphics;
+import java.awt.Image;
+
+import com.lxn.util.GameUtil;
+
+public class Plane {
+	double x;
+	double y;
+	Image img;
+	
+	Plane(String imgpath,double x,double y){
+		this.x=x;
+		this.y=y;
+		img=GameUtil.GetImage(imgpath);
+	}
+	
+	public void draw(Graphics g){
+		g.drawImage(img, (int)x, (int)y,null);
+	}
+}

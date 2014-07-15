@@ -1,0 +1,13 @@
+package Hello;
+
+import java.util.Date;
+import java.sql.Time;
+
+public class testTime {
+	public static void main(String[] args) {
+		Date date=new Date();
+		long ltime=System.currentTimeMillis();
+		System.out.println(ltime);
+		
+	}
+}

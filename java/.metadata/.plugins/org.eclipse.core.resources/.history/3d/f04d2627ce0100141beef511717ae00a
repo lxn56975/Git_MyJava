@@ -1,0 +1,53 @@
+package com.lxn.planegame;
+
+import java.awt.Graphics;
+import java.awt.Image;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+
+import com.lxn.util.Constant;
+import com.lxn.util.GameFrame;
+import com.lxn.util.GameUtil;
+
+public class planeFrame extends GameFrame{
+	
+	Image img=GameUtil.GetImage("Images/bg.jpg");
+	Plane plane=new Plane("Images/plane.png", 100, 100);
+	@Override
+	public void lauchFrame() {
+		super.lauchFrame();
+		addKeyListener(new KeyMonitor());//注册
+	}
+	/**
+	 * 定义为内部类 方便使用属性
+	 * @author xiaoning
+	 *
+	 */
+	class KeyMonitor extends KeyAdapter{
+
+		@Override
+		public void keyPressed(KeyEvent e) {
+			System.out.println("按下"+e.getKeyCode());
+			plane.x+=2;
+			
+		}
+
+		@Override
+		public void keyReleased(KeyEvent e) {
+			System.out.println("shifang"+e.getKeyCode());
+		}	
+	}
+	
+	@Override
+	public void paint(Graphics g) {
+		g.drawImage(img, 0, 0,null);
+		plane.draw(g);
+		
+	}
+	
+	
+	
+	public static void main(String[] args) {
+		new planeFrame().lauchFrame();
+	}
+}

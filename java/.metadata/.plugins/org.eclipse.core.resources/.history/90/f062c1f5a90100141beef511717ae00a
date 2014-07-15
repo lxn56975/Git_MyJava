@@ -1,0 +1,9 @@
+package com.lxn.littleProject;
+
+public class MyFirstPriject extends GameFrame{
+
+	public static void main(String[] args) {
+		MyFirstPriject  my=new MyFirstPriject();
+		
+	}
+}

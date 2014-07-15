@@ -1,0 +1,18 @@
+package com.lxn.littleProject;
+
+import java.awt.Graphics;
+import java.awt.Image;
+
+public class myGame01 extends myFirstGame{
+	
+	public void paint(Graphics	g){
+		g.drawImage(img, (int)x, (int)y,50,50, null);
+		x+=3;
+	}
+
+	//Image img=GameUtil.GetImage("Image/sun.jpg");
+	public static void main(String[] args) {
+		myGame01 mg=new myGame01();
+		mg.lauchFrame();
+	}
+}

@@ -1,0 +1,22 @@
+package com.lxn.planegame;
+
+import java.util.Date;
+
+public class CountTime {
+
+	Date t;
+	long starttime,endtime;
+	
+	CountTime(){
+		t=new Date();
+		this.start();
+	}
+	
+	public void start(){
+		starttime=t.getTime();
+	}
+	
+	public int running(){
+		return (int)(t.getTime()-starttime)/1000;
+	}
+}
